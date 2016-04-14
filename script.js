@@ -4,27 +4,46 @@
 $(document).ready(function() {
   var $body = $("body");
   
+  // Add aggro and cricket to the document
   $body.append("<div id='aggro'><span id='score'></span></div>");
   $body.append("<div id='cricket'></div>");
 
+  // Set the jquery variables for future use and readability
   var $cricket = $("#cricket");
   var $aggro = $("#aggro");
   var $score = $("#score")
-  var score = 0;
 
+  var biteSound = new Audio("bite.mp3");
+  var missedSound = new Audio("bzzt.mp3");
+  var scoreObj = {curr: 0, max: 0};
+  var timeObj = {timer: 0, milisecs: 5000, missedSound: missedSound};
+
+  alert("Click the cricket to start! time alloted between clicks gets stricter as you go! Good luck!")
+
+  // When the cricket is clicked, update the score and move it
   $cricket.click(function() {
-    move_cricket($cricket);
+    endAndStartTimer(timeObj, scoreObj);
+    $cricket.hide();  // No Cheaters!
 
-    score++;
-    $score.html("<b>Score: " + score + "</b>");
+    playBiteSound(biteSound);
+    moveCricket($cricket);
+    updateScore($score, scoreObj);
+
+    $cricket.show();
   });
 
 });
 
 
-function move_cricket($cricket) {
-  $cricket.hide();
+// Plays the bite sound. Interrupts and stops the previous sound if playing
+function playBiteSound(biteSound) {
+    biteSound.pause();
+    biteSound.currentTime = 0;
+    biteSound.play(); 
+};
 
+// Moves the cricket element randomly on the page
+function moveCricket($cricket) {
   var left = 0;
   var bottom = 0;
 
@@ -34,7 +53,32 @@ function move_cricket($cricket) {
     bottom = Math.floor(Math.random() * (90 + 1));
   }
 
+  // Repositon the cricket on the webpage to its randomized position
   $cricket.css({bottom: bottom + "%", left: left + "%"});
+};
 
-  $cricket.show();
+// Updates the current score and max score if necessary, changes $score's text
+function updateScore($score, scoreObj) {
+  scoreObj.curr++;
+
+  if (scoreObj.curr > scoreObj.max) {
+    scoreObj.max = scoreObj.curr
+  }
+
+  $score.html("<b>Score: " + scoreObj.curr + "<br>Max: " + scoreObj.max + "</b>");
+};
+
+//
+function restartGame(timeObj, scoreObj) {
+  timeObj.missedSound.play()
+  scoreObj.curr = 0;
+  timeObj.milisecs = 5000;
+  $("#score").html("<b>Score: "+ scoreObj.curr +"<br>Max: "+ scoreObj.max +"</b>");
+  $("#cricket").css({bottom: "90%", left: "90%"});
+};
+
+function endAndStartTimer(timeObj, scoreObj) {
+  window.clearTimeout(timeObj.timer);
+  timeObj.milisecs = timeObj.milisecs / 1.05
+  timeObj.timer = window.setTimeout(function() { restartGame(timeObj, scoreObj); }, timeObj.milisecs);
 };
