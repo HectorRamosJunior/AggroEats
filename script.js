@@ -13,8 +13,11 @@ $(document).ready(function() {
   var $aggro = $("#aggro");
   var $score = $("#score")
 
+  // Load game audio for future use
   var biteSound = new Audio("audio/bite.mp3");
   var missedSound = new Audio("audio/bzzt.mp3");
+
+  // Stored in objects to be able to be passed by reference
   var scoreObj = {curr: 0, max: 0};
   var timeObj = {timer: 0, milisecs: 5000, missedSound: missedSound};
 
@@ -68,17 +71,20 @@ function updateScore($score, scoreObj) {
   $score.html("<b>Score: " + scoreObj.curr + "<br>Max: " + scoreObj.max + "</b>");
 };
 
-//
+// Plays the missed sound, resets score and moves cricket to original position
 function restartGame(timeObj, scoreObj) {
   timeObj.missedSound.play()
+
+  // Reset the timer and current score to orginal values
   scoreObj.curr = 0;
   timeObj.milisecs = 5000;
+
   $("#score").html("<b>Score: "+ scoreObj.curr +"<br>Max: "+ scoreObj.max +"</b>");
   $("#cricket").css({bottom: "90%", left: "90%"});
 };
 
 function endAndStartTimer(timeObj, scoreObj) {
   window.clearTimeout(timeObj.timer);
-  timeObj.milisecs = timeObj.milisecs / 1.05
+  timeObj.milisecs = timeObj.milisecs / 1.05    // Reduce miliseconds for timeout
   timeObj.timer = window.setTimeout(function() { restartGame(timeObj, scoreObj); }, timeObj.milisecs);
 };
