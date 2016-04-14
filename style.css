@@ -3,27 +3,33 @@
 @charset "utf-8";
 
 body {
-    background-image: url("http://img.mota.ru/upload/wallpapers/2012/09/07/09/04/32413/mota_ru_2090714-1920x1080.jpg");
+    background-image: url("http://i.imgur.com/EJuZE1H.jpg");
     /*background-size: cover;
     background-position: center;*/
 }
 
-#Aggro {
+#aggro {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 200px;
-    width: 100px;
+    height: 12%;
+    width: 20%;
     background-image: url("http://i.imgur.com/98OPNLs.jpg");
-    background-size: contain;
+    background-size: 100% 100%;
 }
 
-#Cricket {
+#cricket {
     position: fixed;
     right: 0;
     top: 0;
-    height: 100px;
+    height: 10%;
     width: 15%;
-    background-image: url("http://cliparts.co/cliparts/Acb/ran/AcbranGdi.gif");  
-    background-size: contain;
+    background-image: url("http://i.imgur.com/wkLlJAz.png");  
+    background-size: 100% 100%;
+}
+
+#score {
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
