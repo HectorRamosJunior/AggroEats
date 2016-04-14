@@ -1,0 +1,29 @@
+/* Hector Ramos */
+/* April 13, 2016 */
+@charset "utf-8";
+
+body {
+    background-image: url("http://img.mota.ru/upload/wallpapers/2012/09/07/09/04/32413/mota_ru_2090714-1920x1080.jpg");
+    /*background-size: cover;
+    background-position: center;*/
+}
+
+#Aggro {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 200px;
+    width: 100px;
+    background-image: url("http://i.imgur.com/98OPNLs.jpg");
+    background-size: contain;
+}
+
+#Cricket {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100px;
+    width: 15%;
+    background-image: url("http://cliparts.co/cliparts/Acb/ran/AcbranGdi.gif");  
+    background-size: contain;
+}
