@@ -13,8 +13,8 @@ $(document).ready(function() {
   var $aggro = $("#aggro");
   var $score = $("#score")
 
-  var biteSound = new Audio("bite.mp3");
-  var missedSound = new Audio("bzzt.mp3");
+  var biteSound = new Audio("audio/bite.mp3");
+  var missedSound = new Audio("audio/bzzt.mp3");
   var scoreObj = {curr: 0, max: 0};
   var timeObj = {timer: 0, milisecs: 5000, missedSound: missedSound};
 

@@ -3,7 +3,7 @@
 @charset "utf-8";
 
 body {
-    background-image: url("http://i.imgur.com/EJuZE1H.jpg");
+    background-image: url("img/forest.jpg");
 }
 
 #aggro {
@@ -12,7 +12,7 @@ body {
     bottom: 0%;
     height: 15%;
     width: 15%;
-    background-image: url("http://i.imgur.com/98OPNLs.jpg");
+    background-image: url("img/aggro.jpg");
     background-size: 100% 100%;
 }
 
@@ -22,7 +22,7 @@ body {
     bottom: 90%;
     height: 10%;
     width: 10%;
-    background-image: url("http://i.imgur.com/wkLlJAz.png");  
+    background-image: url("img/cricket.png");  
     background-size: 100% 100%;
 }
 
