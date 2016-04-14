@@ -24,5 +24,17 @@ $(document).ready(function() {
 
 function move_cricket($cricket) {
   $cricket.hide();
+
+  var left = 0;
+  var bottom = 0;
+
+  // Make sure the cricket doesn't overlap with aggro
+  while (left < 15 && bottom < 15) {
+    left = Math.floor(Math.random() * (90 + 1));
+    bottom = Math.floor(Math.random() * (90 + 1));
+  }
+
+  $cricket.css({bottom: bottom + "%", left: left + "%"});
+
   $cricket.show();
 };

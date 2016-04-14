@@ -4,26 +4,24 @@
 
 body {
     background-image: url("http://i.imgur.com/EJuZE1H.jpg");
-    /*background-size: cover;
-    background-position: center;*/
 }
 
 #aggro {
     position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 12%;
-    width: 20%;
+    left: 0%;
+    bottom: 0%;
+    height: 15%;
+    width: 15%;
     background-image: url("http://i.imgur.com/98OPNLs.jpg");
     background-size: 100% 100%;
 }
 
 #cricket {
     position: fixed;
-    right: 0;
-    top: 0;
+    left: 90%;
+    bottom: 90%;
     height: 10%;
-    width: 15%;
+    width: 10%;
     background-image: url("http://i.imgur.com/wkLlJAz.png");  
     background-size: 100% 100%;
 }
