@@ -3,4 +3,4 @@ My girlfriend has a green anole named lizard named Aggro, and this is a web app 
 
 Goal of the game is to react to where the cricket is and click it before time runs out! Be quick, now!
 
-Game can be found here: http://hectorramosjr.com/AggroEats/
+Game can be found here: http://www.hectorramosjr.com/AggroEats/
